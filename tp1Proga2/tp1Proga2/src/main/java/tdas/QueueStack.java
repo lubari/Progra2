@@ -1,6 +1,7 @@
 package tdas;
 
 public class QueueStack{
+
     private final StaticStack[] array;
     private int count;
 
@@ -38,14 +39,15 @@ public class QueueStack{
     }
 
     public int traza(){
-            int suma = 0;
-            for(int i=0; i < this.count; i++){
-
-                for (int j=0; j < i; j++){
-                    this.array[i].remove();
-                }
-                suma += this.array[i].getTop();
+        int suma = 0;
+        int dim = this.count;
+        for (int i = 0; i < dim; i++){
+            for (int j = 0; j < i; j++){
+                this.getFirst().remove();
             }
-            return suma;
+            suma += this.getFirst().getTop();
+            this.remove();
+        }
+        return suma;
     }
 }
