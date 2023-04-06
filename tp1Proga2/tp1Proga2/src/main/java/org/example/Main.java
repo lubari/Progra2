@@ -1,24 +1,32 @@
 package org.example;
 
-import tdas.DynamicStack;
 import tdas.QueueStack;
-import tdas.StaticQueue;
 import tdas.StaticStack;
 
 public class Main {
     public static void main(String[] args) {
-        QueueStack queueStack = new QueueStack(3);
-        StaticStack staticStack = new StaticStack();
-        staticStack.add(1);
-        staticStack.add(2);
-        staticStack.add(3);
 
-        queueStack.add(staticStack);
-        queueStack.add(staticStack);
-        queueStack.add(staticStack);
+        QueueStack colaPila = new QueueStack(3);
+        StaticStack pila1 = new StaticStack();
+        StaticStack pila2 = new StaticStack();
+        StaticStack pila3 = new StaticStack();
 
-        System.out.println(queueStack.traza());
+        pila1.add(1);
+        pila1.add(2);
+        pila1.add(3);
 
+        pila2.add(1);
+        pila2.add(2);
+        pila2.add(3);
 
+        pila3.add(1);
+        pila3.add(2);
+        pila3.add(3);
+
+        colaPila.add(pila1);
+        colaPila.add(pila2);
+        colaPila.add(pila3);
+
+        System.out.println(colaPila.traza());
     }
 }
